@@ -7,7 +7,7 @@ app:
   # Meta description that will show up in Google search results
   meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
   # Meta author that will show up in Google search results
-  meta_author: OpenPlans.org
+  meta_author: PoePublic
 
 
   # When the map loads, existing places will be loaded in chunks. By default,
@@ -38,7 +38,7 @@ map:
   layers:
     # Raster Tile Layers
     # ==================
-    - url: https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ
+    - url: https://api.mapbox.com/styles/v1/danaemobley/cjluxt6sj20g92rnsvwmfiyqt/tiles/256/{z}/{x}/{y}@2x?fresh=true&title=true&access_token=pk.eyJ1IjoiZGFuYWVtb2JsZXkiLCJhIjoiY2loODJjNDZjMHQ3c3Vta2lmd3k1Mm1iZiJ9.Me79N9SPoQPdl6-U0kIZxg#14.0/42.362922/-71.056250/0
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>. Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">.'
 
     # Mapbox GL Layers
