@@ -296,7 +296,7 @@ place:
       - label: _(Yes I have)
         value: yes
     - prompt: _(How did you hear about participatory budgeting (please choose all that apply...)?)
-      type: checkbox
+      type: checkboxgroup
       name: heard_about_pb
       sticky: true
       attrs:
@@ -358,7 +358,7 @@ place:
         - label: _(Prefer not to answer)
           value: no-answer
     - prompt: _(Your gender)
-      type: radio
+      type: radiogroup
       name: private-gender
       sticky: true
       optional: false
@@ -376,7 +376,7 @@ place:
         - label: _(Prefer not to answer)
           value: no-answer
     - prompt: _(Your Race/Ethnicity)
-      type: checkbox
+      type: checkboxgroup
       name: private-race
       sticky: true
       optional: false
