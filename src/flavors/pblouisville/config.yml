@@ -187,88 +187,270 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(Your Name)
+    - prompt: _(What is the title of your idea?)
       type: text
-      name: submitter_name
-      optional: true
-      sticky: true
+      name: title
+      optional: false
       attrs:
         - key: placeholder
-          value: _(Name)
+          value: _(Idea Title...)
         - key: size
           value: 30
-    - prompt: _(Your Email)
-      type: text
-      name: private-submitter_email
-      optional: true
-      sticky: true
+        - key: maxlength
+          value: 100
+        - key: required
+          value: true
+    - prompt: _(How does your idea help improve life in Cambridge?)
+      type: textarea
+      name: description
+      optional: false
       attrs:
         - key: placeholder
-          value: _(Email address)
-        - key: size
-          value: 30
-    - prompt: _(Location Name)
-      type: text
-      name: name
-      optional: true
-      attrs:
-        - key: placeholder
-          value: _(Location Name)
-        - key: size
-          value: 30
-    - prompt: _(Location Type)
+          value: _(What need does your idea address? Who does it benefit? Share any relevant details about your idea.)
+        - key: maxlength
+          value: 1000
+        - key: required
+          value: true
+    - prompt: _(Pick a category for your idea)
       type: select
       options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Landmark)
-          value: landmark
-        - label: _(Park)
-          value: park
-        - label: _(School)
-          value: school
+        - label: _(Please choose...)
+          value:
+        - label: _(Culture & Community Facilities)
+          value: culture
+        - label: _(Education)
+          value: education
+        - label: _(Environment)
+          value: environment
+        - label: _(Parks & Recreation)
+          value: parks
+        - label: _(Public Health & Safety)
+          value: health
+        - label: _(Streets & Sidewalks)
+          value: streets
+        - label: _(Transportation)
+          value: transit
       name: location_type
       attrs:
         - key: required
-    - prompt: _(Yes or no question)
-      type: radiogroup
-      options:
-        - label: _(Indeed)
-          value: yeah
-        - label: _(I don't think so)
-          value: nah
-      name: y_or_n
+          value: true
+    - prompt: _(Is your idea about a specific location or the entire city?)
+      name: city_wide
+      sticky: true
+      optional: false
+      type: select
       attrs:
         - key: required
-    - prompt: _(All that apply questiion)
-      type: checkboxgroup
+          value: true
       options:
-        - label: _(First)
-          value: option1
-        - label: _(Second)
-          value: option2
-        - label: _(Third)
-          value: option3
-        - label: _(Fourth)
-          value: option4
-      name: all_that_apply
+      - label: _(A specific location)
+        value: no
+      - label: _(City-wide)
+        value: yes
+    - prompt: _(Your Name (required, will be shown on the map))
+      type: text
+      name: submitter_name
+      sticky: true
+      optional: false
+      attrs:
+        - key: size
+          value: 30
+        - key: required
+          value: true
+    - prompt: _(Your Phone Number (optional, will NOT be shown on the map))
+      type: tel
+      name: private-phone
+      sticky: true
+      attrs:
+        - key: size
+          value: 10
+    - prompt: _(Your Email (required, will NOT be shown on the map))
+      type: email
+      name: private-email
+      sticky: true
+      attrs:
+        - key: size
+          value: 30
+        - key: required
+          value: true
+    - prompt: _(Your ZIP Code (required, will NOT be shown on the map))
+      type: text
+      name: private-zip
+      sticky: true
+      attrs:
+        - key: size
+          value: 10
+        - key: required
+          value: true
+    - prompt: _(Have you submitted an idea in a previous participatory budgeting cycle?)
+      name: private-previous_participant
+      sticky: true
+      optional: false
+      type: select
       attrs:
         - key: required
-    - prompt: _(Description)
-      type: textarea
-      name: description
-      optional: true
+          value: true
+      options:
+      - label: _(No I haven't)
+        value: no
+      - label: _(Yes I have)
+        value: yes
+    - prompt: _(How did you hear about participatory budgeting (please choose all that apply...)?)
+      type: checkbox
+      name: heard_about_pb
+      sticky: true
       attrs:
-        - key: placeholder
-          value: _(Description...)
-    - prompt: _(Image)
-      inputfile_label: _(Add an Image)
-      type: file
-      name: my_image
-      optional: true
+        - key: required
+          value: true
+      options:
+        - label: _(City Council member)
+          value: city-council-member
+        - label: _(City website)
+          value: city-website
+        - label: _(Community group)
+          value: community-group
+          other: true
+        - label: _(Email)
+          value: email
+        - label: _(Event)
+          value: event
+          other: true
+        - label: _(Flyer/door hanger/sign/banner)
+          value: flyer/door-hanger/sign/banner
+        - label: _(Facebook/Twitter)
+          value: facebook/twitter
+        - label: _(Newspaper/TV/radio)
+          value: newspaper-tv-radio
+          other: true
+        - label: _(School)
+          value: school
+          other: true
+        - label: _(Word of mouth)
+          value: word-of-mouth
+        - label: _(Other)
+          value: other
+          other: true
+    - prompt: _(Your age)
+      type: select
+      name: private-age
+      sticky: true
+      optional: false
       attrs:
-        - key: accept
-          value: image/*
+        - key: required
+          value: true
+      options:
+        - label: _(Please choose...)
+          value:
+        - label: _(Under 18)
+          value: under18
+        - label: _(18 to 24)
+          value: 18to24
+        - label: _(25 to 34)
+          value: 25to34
+        - label: _(35 to 44)
+          value: 35to44
+        - label: _(45 to 54)
+          value: 45to54
+        - label: _(55 to 64)
+          value: 55to64
+        - label: _(65+)
+          value: 65-or-older
+        - label: _(Prefer not to answer)
+          value: no-answer
+    - prompt: _(Your gender)
+      type: radio
+      name: private-gender
+      sticky: true
+      optional: false
+      attrs:
+        - key: required
+          value: true
+      options:
+        - label: _(Female)
+          value: female
+        - label: _(Male)
+          value: male
+        - label: _(Different gender identity)
+          value: other
+          other: true
+        - label: _(Prefer not to answer)
+          value: no-answer
+    - prompt: _(Your Race/Ethnicity)
+      type: checkbox
+      name: private-race
+      sticky: true
+      optional: false
+      attrs:
+        - key: required
+          value: true
+      options:
+        - label: _(American Indian or Alaska native)
+          value: american-indian-or-alaska-native
+        - label: _(Asian)
+          value: asian
+        - label: _(Black or African American)
+          value: black-or-african-american
+        - label: _(Hawaii native or Pacific Islander)
+          value: hawaii-native-or-pacific-islander
+        - label: _(White)
+          value: white
+        - label: _(Hispanic or Latino/a)
+          value: hispanic
+        - label: _(Non-Hispanic)
+          value: non-hispanic
+        - label: _(Other)
+          value: other
+          other: true
+        - label: _(Prefer not to answer)
+          value: no-answer
+    - prompt: _(Annual Household Income)
+      type: select
+      attrs:
+        - key: required
+          value: true
+      options:
+        - label: _(Please choose...)
+          value:
+        - label: _(Less than $45,000)
+          value: under45
+        - label: _($45,000 - $90,000)
+          value: 45to90
+        - label: _($90,001 - $135,000)
+          value: 90to135
+        - label: _($135,001 - $180,000)
+          value: 135to180
+        - label: _($180,001 or more)
+          value: 180ormore
+        - label: _(Prefer not to answer/unsure)
+          value: no-answer
+      name: private-income
+      sticky: true
+      optional: false
+    - prompt: _(What is your highest level of education?)
+      type: select
+      optional: false
+      name: private-education
+      sticky: true
+      attrs:
+        - key: required
+          value: true
+      options:
+      - label: _(Please choose...)
+        value:
+      - label: _(Less than high school diploma)
+        value: lessthanhigh
+      - label: _(High school diploma, GED, or equivalent)
+        value: highschool
+      - label: _(Some college, no degree)
+        value: somecollege
+      - label: _(Associate's degree)
+        value: associates
+      - label: _(Bachelor's degree)
+        value: bachelors
+      - label: _(Graduate or professional degree)
+        value: graduate
+      - label: _(Prefer not to answer)
+        value: no-answer
 
 survey:
   submission_type: comments
