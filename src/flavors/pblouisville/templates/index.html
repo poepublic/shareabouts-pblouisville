@@ -2,10 +2,15 @@
 {% load i18n %}
 
 {% block site-title %}
-<a href="/"><img src="/static/images/Louisville-City-Seal.png"></a>
+<a href="/">
+  <img src="/static/images/Louisville-City-Seal.png">
+  {{config.app.title}}
+</a>
+
 {% endblock %}
 
 {% block meta %}
+<link href="https://fonts.googleapis.com/css?family=Kameron" rel="stylesheet">
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
