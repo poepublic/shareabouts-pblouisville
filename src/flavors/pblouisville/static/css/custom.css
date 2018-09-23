@@ -36,14 +36,10 @@ body {
   padding: 0.5em;
   box-shadow: 0 0.325em 0 rgba(0,0,0,0.1);
 }
-#site-title {
+h1#site-title {
   color: #00172b;
-  font-size: 2em;
+  font-size: 1em;
   font-family: 'Kameron', serif;
-  font-weight: 700;
-  float: left;
-  margin: 0 0.5em 0 0;
-  padding: 0;
 }
 .has-pages #site-title {
   padding-left: 2.25em;
@@ -107,8 +103,11 @@ body {
   text-align: center;
 }
 
-/* Geocoding */
-
+/* Text */
+h1 {
+  font-size: 2.2em;
+  font-family: "Kameron", serif;
+}
 
 
 
