@@ -80,7 +80,9 @@ h1#site-title {
 }
 
 #site-title {
+  color: #00172b;
   height: 5em;
+  text-shadow: none;
 }
 
 #site-title img{
