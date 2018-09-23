@@ -36,9 +36,9 @@ body {
   padding: 0.5em;
   box-shadow: 0 0.325em 0 rgba(0,0,0,0.1);
 }
-h1#site-title {
+h1#site-title a {
   color: #00172b;
-  font-size: 1em;
+  font-size: 1.5em;
   font-family: 'Kameron', serif;
 }
 .has-pages #site-title {
@@ -52,9 +52,7 @@ h1#site-title {
   text-decoration: none;
   color: #eee;
 }
-#site-title a:hover {
-  color: #fff;
-}
+
 
 /* Buttons */
 .btn,
