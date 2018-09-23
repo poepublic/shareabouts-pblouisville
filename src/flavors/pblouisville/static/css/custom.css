@@ -84,7 +84,7 @@
 }
 
 #ticker {
-  background: #00172b;
+  background-color: #00172b;
   position: relative;
   z-index: 30;
   display: none;
