@@ -37,17 +37,16 @@ body {
   box-shadow: 0 0.325em 0 rgba(0,0,0,0.1);
 }
 #site-title {
-  color: #eee;
-  font-size: 1em;
+  color: #00172b;
+  font-size: 2em;
   font-family: 'Kameron', serif;
   font-weight: 700;
-  text-shadow: 1px -1px 1px rgba(0,0,0,0.5);
   float: left;
   margin: 0 0.5em 0 0;
   padding: 0;
 }
 .has-pages #site-title {
-  padding-left: 3.25em;
+  padding-left: 2.25em;
 }
 #site-title a:link,
 #site-title a:visited {
@@ -73,12 +72,14 @@ body {
 .btn-secondary:link {
   background-color: #fff;
   color: #003e7e;
+  box-shadow: 0;
 }
 
 /* Add Place Button */
 #add-place-btn-container {
   background-color: #d5a10e;
   color: #00172b;
+  box-shadow: 0;
 }
 
 #site-title {
