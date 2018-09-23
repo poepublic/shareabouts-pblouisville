@@ -60,6 +60,8 @@ h1#site-title a {
 .btn:link {
   background-color: #d5a10e;
   color: #00172b;
+  border:none;
+  box-shadow: none;
 }
 .btn-secondary,
 .btn-secondary:visited,
