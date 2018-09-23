@@ -57,9 +57,9 @@ h1#site-title {
 }
 
 /* Buttons */
-.btn-primary,
-.btn-primary:visited,
-.btn-primary:link {
+.btn,
+.btn:visited,
+.btn:link {
   background-color: #d5a10e;
   color: #00172b;
 }
@@ -71,7 +71,8 @@ h1#site-title {
   box-shadow: 0;
 }
 
-/* Add Place Button */
+/* =Add Place Button
+-------------------------------------------------------------- */
 #add-place-btn-container {
   background-color: #d5a10e;
   color: #00172b;
@@ -86,6 +87,25 @@ h1#site-title {
   height:2em;
   line-height:;
 }
+/* =Close Button
+-------------------------------------------------------------- */
+a.close-btn {
+  background: #fff;
+  color: #ff5e99;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1.125em;
+  float: left;
+  display: block;
+  position: absolute;
+  top: -1.325em;
+  left: 0.5em;
+  padding: 0.325em 0.625em;
+  z-index: 2;
+  box-shadow: 0 -0.325em 0 rgba(0,0,0,0.1);
+  border-radius: 0.325em 0.325em 0 0;
+}
 
 /* =Ticker
 -------------------------------------------------------------- */
@@ -93,6 +113,13 @@ h1#site-title {
   background-color: #00172b;
 }
 
+/* = Geocoding
+-------------------------------------------------------------- */
+#geocode-address-bar {
+  display: none;
+  background-color: #00172b;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
 /* =Footer
 -------------------------------------------------------------- */
 #colophon {
@@ -103,7 +130,8 @@ h1#site-title {
   text-align: center;
 }
 
-/* Text */
+/* = Typography
+-------------------------------------------------------------- */
 h1 {
   font-size: 2.2em;
   font-family: "Kameron", serif;
