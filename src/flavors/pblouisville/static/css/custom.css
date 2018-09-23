@@ -82,3 +82,10 @@
   height:2em;
   line-height:;
 }
+
+#ticker {
+  background: #00172b;
+  position: relative;
+  z-index: 30;
+  display: none;
+}
