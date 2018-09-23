@@ -75,6 +75,12 @@ body {
   color: #003e7e;
 }
 
+/* Add Place Button */
+#add-place-btn-container {
+  background-color: #d5a10e;
+  color: #00172b;
+}
+
 #site-title {
   height: 5em;
 }
