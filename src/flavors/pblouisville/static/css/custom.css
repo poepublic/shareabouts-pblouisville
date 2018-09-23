@@ -21,6 +21,11 @@
 @media only screen and (min-width: 1300px) {
 }
 
+/* Body */
+body {
+  background-color: #00172b;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 #site-header {
@@ -57,14 +62,8 @@
 }
 
 /* Navigation Button */
-
-body {
-    background-color: #00172b;
-}
-
-/* Navigation Button */
 #nav-btn {
-  background: #6f6f6f;
+  background: #d5a10e;
   color: #bbb;
   font-size: 2em;
   line-height: 1;
@@ -77,6 +76,13 @@ body {
   position: absolute;
   left: 0.25em;
   top: 0.25em;
+}
+
+.btn-secondary,
+.btn-secondary:visited,
+.btn-secondary:link {
+  background-color: #d5a10e;
+  color: #fff;
 }
 
 #site-title {
@@ -105,16 +111,7 @@ body {
 }
 
 /* Geocoding */
-#geocode-address-bar {
-  position: absolute;
-  top: 5em; /* height of #site-header */
-  right: 0;
-  bottom: auto;
-  left: 0;
-  z-index: 39;
-  border-right: 1px solid #00172b;
-  margin-top: 0;
-}
+
 
 
 
