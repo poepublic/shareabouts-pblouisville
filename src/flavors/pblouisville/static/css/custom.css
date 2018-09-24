@@ -42,6 +42,9 @@ h1#site-title a {
   font-family: 'Kameron', serif;
   padding: 0,0,0.5em,0;
 }
+#site-title a:link, #site-title a:visited {
+  color: #00172b;
+}
 .has-pages #site-title {
   padding-left: 2.25em;
 }
