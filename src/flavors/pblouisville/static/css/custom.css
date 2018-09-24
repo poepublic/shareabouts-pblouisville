@@ -78,7 +78,7 @@ h1#site-title a {
 
 #site-title img{
   height:1.75em;
-  line-height:1.25em;
+  line-height:1em;
   vertical-align:text-top;
 }
 /* =Close Button
@@ -133,5 +133,8 @@ h1 {
   font-family: "Kameron", serif;
 }
 
-
+#pages-nav-container {
+    height: 100%;
+    float: right;
+}
 
