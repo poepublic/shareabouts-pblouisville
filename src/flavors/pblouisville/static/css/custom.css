@@ -29,7 +29,7 @@ body {
 /* =Header
 -------------------------------------------------------------- */
 #site-header {
-  color: #eee;
+  color: #00172b;
   background-color: #fff;
   position: relative;
   z-index: 40;
@@ -45,15 +45,6 @@ h1#site-title a {
 .has-pages #site-title {
   padding-left: 2.25em;
 }
-#site-title a:link,
-#site-title a:visited {
-  display: block;
-  font-size: 2em;
-  line-height: 1.25;
-  text-decoration: none;
-  color: #eee;
-}
-
 
 /* Buttons */
 .btn,
@@ -80,12 +71,6 @@ h1#site-title a {
   background-color: #d5a10e;
   color: #00172b;
   box-shadow: 0;
-}
-
-#site-title {
-  color: #00172b;
-  height: 5em;
-  text-shadow: none;
 }
 
 #site-title img{
