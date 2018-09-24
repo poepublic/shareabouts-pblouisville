@@ -79,6 +79,7 @@ h1#site-title a {
 #site-title img{
   height:2em;
   line-height:;
+  vertical-align:text-top;
 }
 /* =Close Button
 -------------------------------------------------------------- */
@@ -114,7 +115,7 @@ div#geocode-address-bar {
 }
 input.geocode-address-field {
   background-color: #fff;
-
+}
 /* =Footer
 -------------------------------------------------------------- */
 #colophon {
