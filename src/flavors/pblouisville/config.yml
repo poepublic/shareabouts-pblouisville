@@ -24,6 +24,7 @@ map:
   geolocation_onload: false
 
   geocoding_enabled: true
+  geocoding_engine: 'Mapbox'
   geocode_field_label: _(Enter an address...)
   geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
 
@@ -33,7 +34,7 @@ map:
       lng: -85.747083
     zoom: 11
     minZoom: 10
-    maxZoom: 15
+    maxZoom: 18
     scrollWheelZoom: false
   layers:
     # Raster Tile Layers
@@ -179,7 +180,7 @@ place:
   show_list_button_label: _(List All Places)
   show_map_button_label: _(Show the Map)
   action_text: _(added)
-  title: _(Tell us more...)
+  title: _(How should your tax dollars be spent in your neighborhood?...)
   action_text: _(created)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
@@ -187,66 +188,21 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is the title of your idea?)
-      type: text
+    - prompt: _(What is your idea for what should be created or repaired in our district/neighborhood??)
+      type: textarea
       name: title
       optional: false
       attrs:
         - key: placeholder
           value: _(Idea Title...)
-        - key: size
-          value: 30
-        - key: maxlength
-          value: 100
-        - key: required
-          value: true
-    - prompt: _(How does your idea help improve life in Cambridge?)
-      type: textarea
-      name: description
-      optional: false
-      attrs:
-        - key: placeholder
-          value: _(What need does your idea address? Who does it benefit? Share any relevant details about your idea.)
         - key: maxlength
           value: 1000
         - key: required
           value: true
-    - prompt: _(Pick a category for your idea)
-      type: select
-      options:
-        - label: _(Please choose...)
-          value:
-        - label: _(Culture & Community Facilities)
-          value: culture
-        - label: _(Education)
-          value: education
-        - label: _(Environment)
-          value: environment
-        - label: _(Parks & Recreation)
-          value: parks
-        - label: _(Public Health & Safety)
-          value: health
-        - label: _(Streets & Sidewalks)
-          value: streets
-        - label: _(Transportation)
-          value: transit
-      name: location_type
-      attrs:
-        - key: required
-          value: true
-    - prompt: _(Is your idea about a specific location or the entire city?)
-      name: city_wide
-      sticky: true
-      optional: false
-      type: select
-      attrs:
-        - key: required
-          value: true
-      options:
-      - label: _(A specific location)
-        value: no
-      - label: _(City-wide)
-        value: yes
+    - prompt: _(Where should it be located?)
+      type: location
+      name: approxaddress
+      placeholder: _(Drag the map to set your idea location.)
     - prompt: _(Your Name (required, will be shown on the map))
       type: text
       name: submitter_name
@@ -257,6 +213,15 @@ place:
           value: 30
         - key: required
           value: true
+    - prompt: _(Your Email (required, will NOT be shown on the map))
+      type: email
+      name: private-email
+      sticky: true
+      attrs:
+      - key: size
+        value: 30
+      - key: required
+        value: true
     - prompt: _(Your Phone Number (optional, will NOT be shown on the map))
       type: tel
       name: private-phone
@@ -264,193 +229,28 @@ place:
       attrs:
         - key: size
           value: 10
-    - prompt: _(Your Email (required, will NOT be shown on the map))
-      type: email
-      name: private-email
-      sticky: true
-      attrs:
-        - key: size
-          value: 30
-        - key: required
-          value: true
-    - prompt: _(Your ZIP Code (required, will NOT be shown on the map))
+    - prompt: _(Your Neighborhood/District (required, will NOT be shown on the map))
       type: text
-      name: private-zip
+      name: private-neighborhood
       sticky: true
       attrs:
         - key: size
           value: 10
         - key: required
           value: true
-    - prompt: _(Have you submitted an idea in a previous participatory budgeting cycle?)
-      name: private-previous_participant
-      sticky: true
-      optional: false
+    - prompt: _(Would you like to be a community representative for the idea collection process?)
       type: select
-      attrs:
-        - key: required
-          value: true
-      options:
-      - label: _(No I haven't)
-        value: no
-      - label: _(Yes I have)
-        value: yes
-    - prompt: _(How did you hear about participatory budgeting (please choose all that apply...)?)
-      type: checkboxgroup
-      name: heard_about_pb
+      name: private-communityrep
       sticky: true
-      attrs:
-        - key: required
-          value: true
       options:
-        - label: _(City Council member)
-          value: city-council-member
-        - label: _(City website)
-          value: city-website
-        - label: _(Community group)
-          value: community-group
-          other: true
-        - label: _(Email)
-          value: email
-        - label: _(Event)
-          value: event
-          other: true
-        - label: _(Flyer/door hanger/sign/banner)
-          value: flyer/door-hanger/sign/banner
-        - label: _(Facebook/Twitter)
-          value: facebook/twitter
-        - label: _(Newspaper/TV/radio)
-          value: newspaper-tv-radio
-          other: true
-        - label: _(School)
-          value: school
-          other: true
-        - label: _(Word of mouth)
-          value: word-of-mouth
-        - label: _(Other)
-          value: other
-          other: true
-    - prompt: _(Your age)
-      type: select
-      name: private-age
-      sticky: true
-      optional: false
-      attrs:
-        - key: required
-          value: true
-      options:
-        - label: _(Please choose...)
-          value:
-        - label: _(Under 18)
-          value: under18
-        - label: _(18 to 24)
-          value: 18to24
-        - label: _(25 to 34)
-          value: 25to34
-        - label: _(35 to 44)
-          value: 35to44
-        - label: _(45 to 54)
-          value: 45to54
-        - label: _(55 to 64)
-          value: 55to64
-        - label: _(65+)
-          value: 65-or-older
-        - label: _(Prefer not to answer)
-          value: no-answer
-    - prompt: _(Your gender)
-      type: radiogroup
-      name: private-gender
-      sticky: true
-      optional: false
-      attrs:
-        - key: required
-          value: true
-      options:
-        - label: _(Female)
-          value: female
-        - label: _(Male)
-          value: male
-        - label: _(Different gender identity)
-          value: other
-          other: true
-        - label: _(Prefer not to answer)
-          value: no-answer
-    - prompt: _(Your Race/Ethnicity)
-      type: checkboxgroup
-      name: private-race
-      sticky: true
-      optional: false
-      attrs:
-        - key: required
-          value: true
-      options:
-        - label: _(American Indian or Alaska native)
-          value: american-indian-or-alaska-native
-        - label: _(Asian)
-          value: asian
-        - label: _(Black or African American)
-          value: black-or-african-american
-        - label: _(Hawaii native or Pacific Islander)
-          value: hawaii-native-or-pacific-islander
-        - label: _(White)
-          value: white
-        - label: _(Hispanic or Latino/a)
-          value: hispanic
-        - label: _(Non-Hispanic)
-          value: non-hispanic
-        - label: _(Other)
-          value: other
-          other: true
-        - label: _(Prefer not to answer)
-          value: no-answer
-    - prompt: _(Annual Household Income)
-      type: select
-      attrs:
-        - key: required
-          value: true
-      options:
-        - label: _(Please choose...)
-          value:
-        - label: _(Less than $45,000)
-          value: under45
-        - label: _($45,000 - $90,000)
-          value: 45to90
-        - label: _($90,001 - $135,000)
-          value: 90to135
-        - label: _($135,001 - $180,000)
-          value: 135to180
-        - label: _($180,001 or more)
-          value: 180ormore
-        - label: _(Prefer not to answer/unsure)
-          value: no-answer
-      name: private-income
-      sticky: true
-      optional: false
-    - prompt: _(What is your highest level of education?)
-      type: select
-      optional: false
-      name: private-education
-      sticky: true
-      attrs:
-        - key: required
-          value: true
-      options:
-      - label: _(Please choose...)
-        value:
-      - label: _(Less than high school diploma)
-        value: lessthanhigh
-      - label: _(High school diploma, GED, or equivalent)
-        value: highschool
-      - label: _(Some college, no degree)
-        value: somecollege
-      - label: _(Associate's degree)
-        value: associates
-      - label: _(Bachelor's degree)
-        value: bachelors
-      - label: _(Graduate or professional degree)
-        value: graduate
-      - label: _(Prefer not to answer)
-        value: no-answer
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      help_text: _(Thank you for volunteering to serve your ward as community representative. Community Representatives are essential to Participatory Budgeting. It is their job to take the ideas developed by community members at the neighborhood assemblies and elsewhere, and turn them into concrete proposals to put on the final ballot.)
+
 
 survey:
   submission_type: comments
