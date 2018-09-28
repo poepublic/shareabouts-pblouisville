@@ -515,47 +515,43 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(About PB Louisville)
+  - title: _(Return to Our Money, Our Voice)
     slug: about
     name: overview
-    start_page: true
+    url: http://www.ourmoneyourvoice.org
 
-  - title: _(More...)
+  - title: _(About)
     pages:
-      - title: _(Why Shareabouts?)
-        slug: why
-        url: /static/pages/why.html
+      - title: _(About Idea Collection)
+        slug: about
+        url: /static/pages/about.html
 
-      - title: _(Features)
-        slug: features
-        url: /static/pages/features.html
+  - title: _(Get Involved)
+    slug: get-involved
+    url: http://louisvilleky.gov/government/center-health-equity/get-involved  
+    
+  - title: _(Upcoming Events)
+    slug: events
+    url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar 
+    
+ # - title: Filter Places
+    #slug: filter-type
+    #pages:
+     # - title: All
+      #  external: true
+       # url: /filter/all
+      #- title: _(Landmark)
+       # url: /filter/landmark
+        #external: true
+      #- title: _(Park)
+       # url: /filter/park
+        #external: true
+      #- title: _(School)
+       # url: /filter/school
+        #external: true
+        #*/
 
-  - title: _(Links)
-    pages:
-      - title: _(Documentation)
-        external: true
-        url: https://github.com/openplans/shareabouts/tree/master/doc
-      - title: _(Issues)
-        external: true
-        url: https://github.com/openplans/shareabouts/issues
-      - title: _(GitHub)
-        external: true
-        url: https://github.com/openplans/shareabouts
-  - title: Filter Places
-    slug: filter-type
-    pages:
-      - title: All
-        external: true
-        url: /filter/all
-      - title: _(Landmark)
-        url: /filter/landmark
-        external: true
-      - title: _(Park)
-        url: /filter/park
-        external: true
-      - title: _(School)
-        url: /filter/school
-        external: true
+
 
 notifications:
   on_new_place: true
