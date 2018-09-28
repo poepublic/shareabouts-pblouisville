@@ -28,6 +28,10 @@ body {
 
 /* =Header
 -------------------------------------------------------------- */
+#pages-nav-container {
+    height: 100%;
+    float: right;
+}
 #site-header {
   color: #00172b;
   background-color: #fff;
@@ -38,7 +42,7 @@ body {
 }
 h1#site-title a {
   color: #00172b;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-family: 'Kameron', serif;
   padding: 0,0,0.5em,0;
   vertical-align:text-top;
@@ -78,7 +82,7 @@ h1#site-title a {
 }
 
 #site-title img{
-  height:1.75em;
+  height:1.5em;
   line-height:1em;
   vertical-align:text-top;
 }
@@ -130,12 +134,9 @@ input.geocode-address-field {
 /* = Typography
 -------------------------------------------------------------- */
 h1 {
-  font-size: 2.2em;
+  font-size: 2em;
   font-family: "Kameron", serif;
 }
 
-#pages-nav-container {
-    height: 100%;
-    float: right;
-}
+
 
