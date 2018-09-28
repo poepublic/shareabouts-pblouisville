@@ -304,6 +304,16 @@ img {
   opacity: 0.75;
 }
 
+/* Location receiver */
+.location-receiver {
+  text-align: center;
+  font-weight: bold;
+}
+
+.location-receiver .default {
+  font-style: italic;
+}
+
 
 /* =Nonsemantic Base Styles
 -------------------------------------------------------------- */
@@ -365,6 +375,10 @@ img {
 }
 
 /* Navigation Button */
+/* ----------------- */
+/* This is the little "hamburger" button that opens up the navigation menu on
+   mobile.
+*/
 #nav-btn {
   background: #6f6f6f;
   color: #bbb;
