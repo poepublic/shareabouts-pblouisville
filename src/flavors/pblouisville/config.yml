@@ -319,7 +319,6 @@ pages:
     external: true
     url: http://www.ourmoneyourvoice.org
 
-
   - title: _(About)
     pages:
       - title: _(About Idea Collection)
