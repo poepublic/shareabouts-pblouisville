@@ -316,8 +316,6 @@ support:
 
 pages:
   - title: _(Return to Our Money, Our Voice)
-    slug: about
-    name: overview
     url: http://www.ourmoneyourvoice.org
 
   - title: _(About)
