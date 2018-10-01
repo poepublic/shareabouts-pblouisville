@@ -315,9 +315,6 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(Return to Our Money, Our Voice)
-    external: true
-    url: http://www.ourmoneyourvoice.org
 
   - title: _(About)
     pages:
@@ -332,7 +329,11 @@ pages:
   - title: _(Upcoming Events)
     external: true
     url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar 
-    
+
+  - title: _(Return to Our Money, Our Voice)
+    external: true
+    url: http://www.ourmoneyourvoice.org   
+
  # - title: Filter Places
     #slug: filter-type
     #pages:
@@ -349,8 +350,6 @@ pages:
        # url: /filter/school
         #external: true
         #*/
-
-
 
 notifications:
   on_new_place: true
