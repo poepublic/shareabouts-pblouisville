@@ -151,4 +151,39 @@ h1 {
           box-sizing: border-box;
 }
 
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.radio-label-text,
+.checkbox-label-text,
+select,
+textarea {
+  outline: 0;
+  border: 0.02em solid #a3c7d9;
+  border-radius: 0;
+  padding: 0.5em;
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
+body, select, input, textarea {
+  color: #555;
+  font-family: "Lato", Arial, Helvetica, serif;
+}
+
+.drag-marker-instructions,
+.drag-marker-warning {
+  background-color: #e6e7e8;
+}

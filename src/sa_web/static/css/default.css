@@ -636,7 +636,6 @@ a.logout-btn {
 .drag-marker-instructions,
 .drag-marker-warning {
   background-color: LightYellow;
-  background-color: rgba(240,240,0,0.2);
   color: #444;
   font-weight: bold;
   text-shadow: -1px 1px 0 rgba(255,255,255,0.5);
