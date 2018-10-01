@@ -41,14 +41,14 @@ body {
   box-shadow: 0 0.325em 0 rgba(0,0,0,0.1);
 }
 h1#site-title a {
-  color: #00172b;
-  font-size: 1.25em;
+  color: #fff;
+  font-size: 1.1em;
   font-family: 'Kameron', serif;
   padding: 0,0,0.5em,0;
   vertical-align:text-top;
 }
 #site-title a:link, #site-title a:visited {
-  color: #00172b;
+  color: #fff;
 }
 .has-pages #site-title {
   padding-left: 2.25em;
@@ -58,8 +58,8 @@ h1#site-title a {
 .btn,
 .btn:visited,
 .btn:link {
-  background-color: #d5a10e;
-  color: #00172b;
+  background-color: #3e52a4;
+  color: #fff;
   border:none;
   box-shadow: none;
   /*border: 1px solid rgba(0,0,0,1);
@@ -76,8 +76,8 @@ h1#site-title a {
 /* =Add Place Button
 -------------------------------------------------------------- */
 #add-place-btn-container {
-  background-color: #d5a10e;
-  color: #00172b;
+  background-color: #126938;
+  color: #fff;
   box-shadow: 0;
 }
 
@@ -109,7 +109,7 @@ a.close-btn {
 /* =Ticker
 -------------------------------------------------------------- */
 #ticker {
-  background-color: #00172b;
+  background-color: #fff;
 }
 
 /* = Geocoding
