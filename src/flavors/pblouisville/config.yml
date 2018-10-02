@@ -253,22 +253,22 @@ support:
 
 pages:
 
-      - title: _(About Idea Collection)
-        slug: about
+  - title: _(About Idea Collection)
+    slug: about
     start_page: true
     name: overview
 
   - title: _(Get Involved)
     external: true
-    url: http://louisvilleky.gov/government/center-health-equity/get-involved  
-    
+    url: http://louisvilleky.gov/government/center-health-equity/get-involved
+
   - title: _(Upcoming Events)
     external: true
-    url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar 
+    url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar
 
   - title: _(Return to Our Money, Our Voice)
     external: true
-    url: http://www.ourmoneyourvoice.org   
+    url: http://www.ourmoneyourvoice.org
 
  # - title: Filter Places
     #slug: filter-type
