@@ -253,11 +253,10 @@ support:
 
 pages:
 
-  - title: _(About)
-    pages:
       - title: _(About Idea Collection)
         slug: about
-        url: /static/pages/about.html
+    start_page: true
+    name: overview
 
   - title: _(Get Involved)
     external: true
