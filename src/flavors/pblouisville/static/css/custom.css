@@ -47,7 +47,9 @@ body {
 h1#site-title a {
   color: #fff;
   font-size: 1.1em;
-  font-family: 'Lato', sans-serif;
+  font-family: "museo-slab", serif;
+  font-style: normal;
+  font-weight: 500;
   padding: 0,0,0.5em,0;
   vertical-align:text-top;
 }
@@ -130,7 +132,7 @@ input.geocode-address-field {
 #colophon {
   background-color: #3e52a4;
   color: #ddd;
-  padding: 1em 0.5em;
+  padding: 0.25em;
   box-shadow: inset 0 0.325em rgba(0,0,0,0.1);
   text-align: center;
 }

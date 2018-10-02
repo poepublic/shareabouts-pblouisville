@@ -4,13 +4,14 @@
 {% block site-title %}
 <a href="/">
   <img src="/static/images/Louisville-City-Seal.png">
-  {{config.app.title}}
+  {{config.app.title}} <small>PB</small>
 </a>
 
 {% endblock %}
 
 {% block meta %}
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/aha2jwg.css">
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
@@ -53,7 +54,7 @@
   This will place content in the colophon below the map
  -->
 {% block colophon %}
-<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">a project of <a href="http://openplans.org/" class="openplans-logo" target="_blank">OpenPlans</a></span></p>
+<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">built by Poe<b>Public</b></span></p>
 {% endblock %}
 
 <!--
