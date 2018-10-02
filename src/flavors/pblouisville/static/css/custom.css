@@ -191,3 +191,15 @@ body, select, input, textarea {
 .drag-marker-warning {
   background-color: #e6e7e8;
 }
+
+.help-text {
+  font-size: 0.8em;
+}
+
+.location-receiver {
+  padding-top: 0.5rem;
+}
+
+.place-private-communityrep-help-text {
+  padding-top: 0.5em;
+}
