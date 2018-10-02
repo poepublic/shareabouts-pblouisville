@@ -26,6 +26,10 @@ body {
   background-color: #00172b;
 }
 
+.place-location_type-field {
+  display: none;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 #pages-nav-container {
