@@ -32,7 +32,7 @@ map:
     center:
       lat: 38.253898
       lng: -85.747083
-    zoom: 11
+    zoom: 12
     minZoom: 10
     maxZoom: 18
     scrollWheelZoom: false
