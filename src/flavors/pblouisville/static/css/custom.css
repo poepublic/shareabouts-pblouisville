@@ -94,7 +94,7 @@ h1#site-title a {
 }
 /* =Close Button
 -------------------------------------------------------------- */
-a.close-btn {
+/* a.close-btn {
   background: #fff;
   color: #ff5e99;
   font-size: 1.25em;
@@ -110,7 +110,7 @@ a.close-btn {
   z-index: 2;
   box-shadow: none;
   border-radius: 0.325em 0.325em 0 0;
-}
+} */
 
 /* =Ticker
 -------------------------------------------------------------- */
@@ -208,4 +208,41 @@ body, select, input, textarea {
 
 .user-support label {
   color: white;
+}
+
+.geocode-address-field {
+  padding-left: 2.5em;
+  color: #6f6f6f;
+}
+
+@media only screen and (min-width: 60em) {
+  .leaflet-top.leaflet-right {
+    top: 100px;
+  }
+}
+
+#map .leaflet-bar a, #map .leaflet-bar a:hover {
+  width: auto;
+  height: 24px;
+  line-height: 24px;
+}
+
+#map .leaflet-bar > a, #map .leaflet-bar > a:hover {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+
+@media only screen and (min-width: 60em){
+  .geocoding-enabled #content {
+    top: 5em;
+  }
+
+  .geocoding-enabled #map-container {
+    top: 5em;
+  }
+}
+
+.geocoding-enabled #geocode-address-bar {
+  display: none;
 }
