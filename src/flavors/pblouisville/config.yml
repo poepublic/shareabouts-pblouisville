@@ -173,7 +173,7 @@ place:
           value: 10
         - key: required
           value: true
-    - prompt: _(Would you like to be a community representative for the idea collection process?)
+    - prompt: _(Would you like to volunteer?)
       type: select
       name: private-communityrep
       sticky: true
@@ -184,7 +184,7 @@ place:
           value: yes
         - label: _(No)
           value: no
-      help_text: _(Thank you for volunteering to serve your ward as community representative. Community Representatives are essential to Participatory Budgeting. It is their job to take the ideas developed by community members at the neighborhood assemblies and elsewhere, and turn them into concrete proposals to put on the final ballot.)
+      help_text: _(Thank you for volunteering to serve your district as a volunteer. Volunteers are essential to the Participatory Budgeting process. It is their job to take the ideas developed by community members at the neighborhood assemblies and elsewhere, and turn them into concrete proposals to put on the final ballot.)
 
 
 survey:
