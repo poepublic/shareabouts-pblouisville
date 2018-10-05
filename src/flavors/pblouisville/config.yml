@@ -201,11 +201,11 @@ survey:
   anonymous_name: _(Someone)
 
   # Survey form config
-  title: _(Leave a Comment)
+  title: _(Leave a Comment for this idea)
   form_link_text: _(Leave a Comment)
   submit_btn_text: _(Comment)
   items:
-    - prompt: _(Comment)
+    - prompt: _(Comment on this idea)
       label: _(Comment)
       type: textarea
       name: comment
