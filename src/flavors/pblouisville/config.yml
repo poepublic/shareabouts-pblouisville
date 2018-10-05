@@ -131,7 +131,7 @@ place:
       optional: false
       attrs:
         - key: placeholder
-          value: _(Idea Title...)
+          value: _(Describe your idea...)
         - key: maxlength
           value: 1000
         - key: required
