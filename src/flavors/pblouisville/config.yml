@@ -157,8 +157,6 @@ place:
       attrs:
       - key: size
         value: 30
-      - key: required
-        value: true
     - prompt: _(Your Phone Number (optional, will NOT be shown on the map))
       type: tel
       name: private-phone
