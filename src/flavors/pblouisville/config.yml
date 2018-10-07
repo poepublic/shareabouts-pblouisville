@@ -1,7 +1,7 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Louisville PB
+  title: LouisvilleKy
   # Header name
   name: Louisville PB
   # Meta description that will show up in Google search results
@@ -35,6 +35,7 @@ map:
     zoom: 12
     minZoom: 10
     maxZoom: 18
+    maxBounds: [[38.41916639395372, -85.51345825195314],  [38.07296037683433, -86.00784301757814]]
     scrollWheelZoom: false
   layers:
     # Raster Tile Layers
@@ -63,10 +64,10 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  landmark:
-    label: _(Landmark)
+  idea:
+    label: _(Idea)
     rules:
-      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} < 13 && {{layer.focused}} === false'
+      - condition: '{{map.zoom}} < 13 && {{layer.focused}} === false'
         # Display landmarks as circles (vectors) when zoomed out
 
         style:
@@ -76,7 +77,7 @@ place_types:
           opacity: 0.9
           fillOpacity: 1
 
-      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
+      - condition: '{{map.zoom}} >= 13 && {{layer.focused}} === false'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -84,7 +85,7 @@ place_types:
           iconSize: [17, 18]
           iconAnchor: [9, 9]
 
-      - condition: '"{{location_type}}" === "landmark" && {{layer.focused}} === true'
+      - condition: '{{layer.focused}} === true'
         # Display landmarks as icons when zoomed in
 
         icon:
@@ -93,76 +94,6 @@ place_types:
           iconSize: [25, 41]
           shadowSize: [41, 41]
           iconAnchor: [12, 41]
-
-  park:
-    label: _(Park)
-    rules:
-      - condition: '"{{location_type}}" === "park" && {{layer.focused}}'
-        # Show parks that are points as icons...
-
-        icon:
-          iconUrl: /static/css/images/markers/marker-4bbd45.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          weight: 3
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "park"'
-        # Show parks that are points as icons...
-
-        icon:
-          iconUrl: /static/css/images/markers/dot-4bbd45.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-  school:
-    label: _(School)
-    rules:
-      - condition: '"{{location_type}}" === "school" && {{submission_sets.comments.length}} > 0'
-        # Display schools as circles
-
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-
-      - condition: '"{{location_type}}" === "school"'
-        style:
-          color: '#f95016'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
 
 
 activity:
@@ -175,7 +106,7 @@ place:
   adding_supported:
     from: '2017-03-07 00:00 -0500'   # Daylight savings begins mid-March
     until: '2021-04-07 00:00 -0400'  # and ends mid-October.
-  add_button_label: _(Add a Place)
+  add_button_label: _(Submit Your Idea)
   # Labels for the buttons that toggle the map and list views
   show_list_button_label: _(List All Places)
   show_map_button_label: _(Show the Map)
@@ -188,13 +119,20 @@ place:
   location_item_name: location
 
   items:
-    - prompt: _(What is your idea for what should be created or repaired in our district/neighborhood??)
+    - prompt: _(Location type is always "idea")
+      type: hidden
+      name: location_type
+      optional: false
+      attrs:
+        - key: value
+          value: idea
+    - prompt: _(What is your idea for what should be created or repaired in our district/neighborhood?)
       type: textarea
       name: title
       optional: false
       attrs:
         - key: placeholder
-          value: _(Idea Title...)
+          value: _(Describe your idea...)
         - key: maxlength
           value: 1000
         - key: required
@@ -202,8 +140,8 @@ place:
     - prompt: _(Where should it be located?)
       type: location
       name: approxaddress
-      placeholder: _(Drag the map to set your idea location.)
-    - prompt: _(Your Name (required, will be shown on the map))
+      placeholder: _(Drag the map or enter an address in the search bar to set your idea location.)
+    - prompt: _(Your Name (required))
       type: text
       name: submitter_name
       sticky: true
@@ -213,16 +151,24 @@ place:
           value: 30
         - key: required
           value: true
-    - prompt: _(Your Email (required, will NOT be shown on the map))
+    - prompt: _(Do you wish to hide your name?)
+      type: select
+      name: private-anonymous_name
+      sticky: true
+      help_text: _(If you do not hide your name, you will be attributed as the author of your idea. Your name will appear next to your idea on this website.)
+      options:
+        - label: _(No)
+          value: no
+        - label: _(Yes)
+          value: yes
+    - prompt: _(Your Email)
       type: email
       name: private-email
       sticky: true
       attrs:
       - key: size
         value: 30
-      - key: required
-        value: true
-    - prompt: _(Your Phone Number (optional, will NOT be shown on the map))
+    - prompt: _(Your Phone Number)
       type: tel
       name: private-phone
       sticky: true
@@ -238,7 +184,7 @@ place:
           value: 10
         - key: required
           value: true
-    - prompt: _(Would you like to be a community representative for the idea collection process?)
+    - prompt: _(Would you like to volunteer?)
       type: select
       name: private-communityrep
       sticky: true
@@ -249,7 +195,7 @@ place:
           value: yes
         - label: _(No)
           value: no
-      help_text: _(Thank you for volunteering to serve your ward as community representative. Community Representatives are essential to Participatory Budgeting. It is their job to take the ideas developed by community members at the neighborhood assemblies and elsewhere, and turn them into concrete proposals to put on the final ballot.)
+      help_text: _(Thank you for volunteering to serve your district as a volunteer. Volunteers are essential to the Participatory Budgeting process. It is their job to take the ideas developed by community members at the neighborhood assemblies and elsewhere, and turn them into concrete proposals to put on the final ballot.)
 
 
 survey:
@@ -266,38 +212,14 @@ survey:
   anonymous_name: _(Someone)
 
   # Survey form config
-  title: _(Leave a Comment)
+  title: _(Leave a Comment for this idea)
   form_link_text: _(Leave a Comment)
   submit_btn_text: _(Comment)
   items:
-    - prompt: _(Comment)
+    - prompt: _(Comment on this idea)
       label: _(Comment)
       type: textarea
       name: comment
-      attrs:
-        - key: required
-    - prompt: _(Yes or no question)
-      type: radiogroup
-      options:
-        - label: _(Indeed)
-          value: yeah
-        - label: _(I don't think so)
-          value: nah
-      name: y_or_n
-      attrs:
-        - key: required
-    - prompt: _(All that apply questiion)
-      type: checkboxgroup
-      options:
-        - label: _(First)
-          value: option1
-        - label: _(Second)
-          value: option2
-        - label: _(Third)
-          value: option3
-        - label: _(Fourth)
-          value: option4
-      name: all_that_apply
       attrs:
         - key: required
     - prompt: _(Your Name)
@@ -316,23 +238,22 @@ support:
 
 pages:
 
-  - title: _(About)
-    pages:
-      - title: _(About Idea Collection)
-        slug: about
-        url: /static/pages/about.html
+  - title: _(About Idea Collection)
+    slug: about
+    start_page: true
+    name: overview
 
   - title: _(Get Involved)
     external: true
-    url: http://louisvilleky.gov/government/center-health-equity/get-involved  
-    
+    url: http://louisvilleky.gov/government/center-health-equity/get-involved
+
   - title: _(Upcoming Events)
     external: true
-    url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar 
+    url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar
 
   - title: _(Return to Our Money, Our Voice)
     external: true
-    url: http://www.ourmoneyourvoice.org   
+    url: http://www.ourmoneyourvoice.org
 
  # - title: Filter Places
     #slug: filter-type

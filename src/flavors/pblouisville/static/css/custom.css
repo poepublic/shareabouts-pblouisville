@@ -26,6 +26,10 @@ body {
   background-color: #00172b;
 }
 
+.place-location_type-field {
+  display: none;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 #pages-nav-container {
@@ -52,7 +56,9 @@ body {
 h1#site-title a {
   color: #fff;
   font-size: 1.1em;
-  font-family: 'Lato', sans-serif;
+  font-family: "museo-slab", serif;
+  font-style: normal;
+  font-weight: 500;
   padding: 0,0,0.5em,0;
   vertical-align:text-top;
 }
@@ -106,7 +112,7 @@ fieldset {
 }
 /* =Close Button
 -------------------------------------------------------------- */
-a.close-btn {
+/* a.close-btn {
   background: #fff;
   color: #ff5e99;
   font-size: 1.25em;
@@ -122,7 +128,7 @@ a.close-btn {
   z-index: 2;
   box-shadow: none;
   border-radius: 0.325em 0.325em 0 0;
-}
+} */
 
 /* =Ticker
 -------------------------------------------------------------- */
@@ -144,7 +150,7 @@ input.geocode-address-field {
 #colophon {
   background-color: #3e52a4;
   color: #ddd;
-  padding: 1em 0.5em;
+  padding: 0.25em;
   box-shadow: inset 0 0.325em rgba(0,0,0,0.1);
   text-align: center;
 }
@@ -204,4 +210,88 @@ body, select, input, textarea {
 .drag-marker-instructions,
 .drag-marker-warning {
   background-color: #e6e7e8;
+}
+
+.help-text {
+  font-size: 0.8em;
+}
+
+.location-receiver {
+  padding-top: 0.5rem;
+}
+
+.place-private-communityrep-help-text {
+  padding-top: 0.5em;
+}
+
+.user-support label {
+  color: white;
+}
+
+.geocode-address-field {
+  padding-left: 2.5em;
+  color: #6f6f6f;
+}
+
+/* Geogoding / Address Search */
+
+.geocoding-enabled .leaflet-center {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 55px;
+  padding-right: 58px;
+  transition: top 0.25s;
+}
+
+.geocoding-enabled .leaflet-control-geocoder {
+  position: relative;
+  width: 100%;
+  transition: border-color 1s, border-width 1s;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-icon {
+  position: absolute;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-form {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-form input {
+  width: 100%;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-alternatives {
+  width: 100%;
+}
+
+.place-form-visible .leaflet-touch .leaflet-control-geocoder {
+  border-color: #3D53AE;
+  /* border-width: 4px; */
+}
+
+.place-form-visible .leaflet-top.leaflet-center {
+  top: 15%;
+}
+
+@media only screen and (min-width: 60em) {
+  .place-form-visible .leaflet-top.leaflet-center {
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 60em){
+  .geocoding-enabled #content {
+    top: 5em;
+  }
+
+  .geocoding-enabled #map-container {
+    top: 5em;
+  }
+}
+
+.geocoding-enabled #geocode-address-bar {
+  display: none;
 }

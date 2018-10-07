@@ -44,6 +44,10 @@ var Shareabouts = Shareabouts || {};
         self.initGeolocation();
       }
 
+      if (self.options.mapConfig.geocoding_enabled) {
+        self.initGeocoding();
+      }
+
       self.map.addLayer(self.placeLayers);
 
       // Init the layer view cache
@@ -75,11 +79,13 @@ var Shareabouts = Shareabouts || {};
     },
     reverseGeocodeMapCenter: _.debounce(function() {
       var center = this.map.getCenter();
-      S.Util.MapQuest.reverseGeocode(center, {
+      var geocodingEngine = this.options.mapConfig.geocoding_engine || 'MapQuest';
+
+      S.Util[geocodingEngine].reverseGeocode(center, {
         success: function(data) {
-          var locationsData = data.results[0].locations;
+          var locationData = S.Util[geocodingEngine].getLocation(data);
           // S.Util.console.log('Reverse geocoded center: ', data);
-          $(S).trigger('reversegeocode', [locationsData[0]]);
+          $(S).trigger('reversegeocode', [locationData]);
         }
       });
     }, 1000),
@@ -147,6 +153,45 @@ var Shareabouts = Shareabouts || {};
       if (this.options.mapConfig.geolocation_onload) {
         this.geolocate();
       }
+    },
+    initGeocoding() {
+      var geocoder;
+      var control;
+      var options = {
+          collapsed: false,
+          position: 'topright',
+          defaultMarkGeocode: false,
+          geocoder: geocoder
+        };
+
+      switch (this.options.mapConfig.geocoding_engine) {
+        case 'Mapbox':
+          options.geocoder = L.Control.Geocoder.mapbox(S.bootstrapped.mapboxToken);
+          break;
+
+        default:
+          options.geocoder = L.Control.Geocoder.mapQuest(S.bootstrapped.mapQuestKey);
+          break;
+      }
+
+      if (this.options.mapConfig.geocode_field_label) {
+        options.placeholder = this.options.mapConfig.geocode_field_label
+      }
+
+      control = L.Control.geocoder(options)
+        .on('markgeocode', function(evt) {
+          result = evt.geocode || evt;
+          this._map.fitBounds(result.bbox);
+          $(S).trigger('geocode', [evt]);
+        })
+        .addTo(this.map);
+
+      // Move the control to the center
+      $('<div class="leaflet-top leaflet-center"/>')
+        .insertAfter($('.leaflet-top.leaflet-left'))
+        .append($(control._container))
+
+      Shareabouts.geocoderControl = control;
     },
     onClickGeolocate: function(evt) {
       evt.preventDefault();

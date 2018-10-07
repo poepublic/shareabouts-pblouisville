@@ -3,14 +3,20 @@
 
 {% block site-title %}
 <a href="/">
+<<<<<<< HEAD
   <img src="/static/images/image001.png">
   {{config.app.title}}
+=======
+  <img src="/static/images/Louisville-City-Seal.png">
+  {{config.app.title}} <small>PB</small>
+>>>>>>> 71b623c638da7fe11d8620ebba25e16b73978c0e
 </a>
 
 {% endblock %}
 
 {% block meta %}
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/aha2jwg.css">
   {% if place %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
@@ -53,7 +59,10 @@
   This will place content in the colophon below the map
  -->
 {% block colophon %}
-<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">a project of <a href="http://openplans.org/" class="openplans-logo" target="_blank">OpenPlans</a></span></p>
+<p id="powered-by">{% blocktrans %}Powered by{% endblocktrans %} <a href="http://shareabouts.org/" class="shareabouts-logo" target="_blank">Shareabouts</a>, <span class="nobreak">built by Poe<b>Public</b></span></p>
+{% endblock %}
+
+{% block cdn_load %}
 {% endblock %}
 
 <!--
