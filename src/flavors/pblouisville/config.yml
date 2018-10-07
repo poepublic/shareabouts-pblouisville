@@ -35,6 +35,7 @@ map:
     zoom: 12
     minZoom: 10
     maxZoom: 18
+    maxBounds: [[38.41916639395372, -85.51345825195314],  [38.07296037683433, -86.00784301757814]]
     scrollWheelZoom: false
   layers:
     # Raster Tile Layers
@@ -125,7 +126,7 @@ place:
       attrs:
         - key: value
           value: idea
-    - prompt: _(What is your idea for what should be created or repaired in our district/neighborhood??)
+    - prompt: _(What is your idea for what should be created or repaired in our district/neighborhood?)
       type: textarea
       name: title
       optional: false
@@ -140,7 +141,7 @@ place:
       type: location
       name: approxaddress
       placeholder: _(Drag the map or enter an address in the search bar to set your idea location.)
-    - prompt: _(Your Name (required, will be shown on the map))
+    - prompt: _(Your Name (required))
       type: text
       name: submitter_name
       sticky: true
@@ -150,14 +151,24 @@ place:
           value: 30
         - key: required
           value: true
-    - prompt: _(Your Email (required, will NOT be shown on the map))
+    - prompt: _(Do you wish to hide your name?)
+      type: select
+      name: private-anonymous_name
+      sticky: true
+      help_text: _(If you do not hide your name, you will be attributed as the author of your idea. Your name will appear next to your idea on this website.)
+      options:
+        - label: _(No)
+          value: no
+        - label: _(Yes)
+          value: yes
+    - prompt: _(Your Email)
       type: email
       name: private-email
       sticky: true
       attrs:
       - key: size
         value: 30
-    - prompt: _(Your Phone Number (optional, will NOT be shown on the map))
+    - prompt: _(Your Phone Number)
       type: tel
       name: private-phone
       sticky: true
