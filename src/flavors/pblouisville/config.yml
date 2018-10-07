@@ -139,7 +139,7 @@ place:
     - prompt: _(Where should it be located?)
       type: location
       name: approxaddress
-      placeholder: _(Drag the map to set your idea location.)
+      placeholder: _(Drag the map or enter an address in the search bar to set your idea location.)
     - prompt: _(Your Name (required, will be shown on the map))
       type: text
       name: submitter_name
