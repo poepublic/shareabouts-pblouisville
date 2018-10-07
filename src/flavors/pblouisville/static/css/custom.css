@@ -215,22 +215,42 @@ body, select, input, textarea {
   color: #6f6f6f;
 }
 
-@media only screen and (min-width: 60em) {
-  .leaflet-top.leaflet-right {
-    top: 100px;
-  }
+/* Geogoding / Address Search */
+
+.geocoding-enabled .leaflet-center {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 55px;
+  padding-right: 58px;
 }
 
-#map .leaflet-bar a, #map .leaflet-bar a:hover {
-  width: auto;
-  height: 24px;
-  line-height: 24px;
+.geocoding-enabled .leaflet-control-geocoder {
+  position: relative;
+  width: 100%;
+  transition: border-color 1s, border-width 1s;
 }
 
-#map .leaflet-bar > a, #map .leaflet-bar > a:hover {
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
+.geocoding-enabled .leaflet-control-geocoder-icon {
+  position: absolute;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-form {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-form input {
+  width: 100%;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-alternatives {
+  width: 100%;
+}
+
+.place-form-visible .leaflet-touch .leaflet-control-geocoder {
+  border-color: #3D53AE;
+  border-width: 4px;
 }
 
 @media only screen and (min-width: 60em){
