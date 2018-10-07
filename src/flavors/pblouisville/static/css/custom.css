@@ -40,6 +40,15 @@ body {
   padding: 0.5em;
   box-shadow: 0 0.325em 0 rgba(0,0,0,0.1);
 }
+
+#site-title a:link, #site-title a:visited {
+  color: #fff;
+}
+.has-pages #site-title {
+  padding-left: 2.25em;
+}
+
+
 h1#site-title a {
   color: #fff;
   font-size: 1.1em;
@@ -47,12 +56,12 @@ h1#site-title a {
   padding: 0,0,0.5em,0;
   vertical-align:text-top;
 }
-#site-title a:link, #site-title a:visited {
-  color: #fff;
+
+h4 {
+  font-size: 1.5em;
+  color:#3a52af;
 }
-.has-pages #site-title {
-  padding-left: 2.25em;
-}
+
 
 /* Buttons */
 .btn,
@@ -62,6 +71,7 @@ h1#site-title a {
   color: #fff;
   border:none;
   box-shadow: none;
+  margin:5%;
   /*border: 1px solid rgba(0,0,0,1);
   border-radius: 1px;*/
 }
@@ -72,6 +82,14 @@ h1#site-title a {
   color: #003e7e;
   box-shadow: none;
 }
+
+/* =Add Place Button
+-------------------------------------------------------------- */
+fieldset {
+  margin: 5%;
+}
+
+
 
 /* =Add Place Button
 -------------------------------------------------------------- */
