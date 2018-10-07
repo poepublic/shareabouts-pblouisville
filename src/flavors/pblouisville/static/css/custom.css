@@ -52,7 +52,8 @@ body {
   padding-left: 2.25em;
 }
 
-
+/* =typography
+-------------------------------------------------------------- */
 h1#site-title a {
   color: #fff;
   font-size: 1.1em;
@@ -89,13 +90,14 @@ h4 {
   box-shadow: none;
 }
 
-/* =Add Place Button
+/* =Form Style
 -------------------------------------------------------------- */
+form {
+}
 fieldset {
   margin: 5%;
+  padding: 0 0 2em;
 }
-
-
 
 /* =Add Place Button
 -------------------------------------------------------------- */
