@@ -141,7 +141,7 @@ place:
       type: location
       name: approxaddress
       placeholder: _(Drag the map or enter an address in the search bar to set your idea location.)
-    - prompt: _(Your Name (required))
+    - prompt: _(Your Name (required for contact purposes))
       type: text
       name: submitter_name
       sticky: true
@@ -161,14 +161,23 @@ place:
           value: no
         - label: _(Yes)
           value: yes
-    - prompt: _(Your Email)
+    - prompt: _(What is your preferred contact method?)
+      type: select
+      name: private-preferred_contact
+      sticky: true
+      options:
+        - label: _(Email)
+          value: email
+        - label: _(Phone)
+          value: phone
+    - prompt: _(Your Email (will NOT be shown on the map))
       type: email
       name: private-email
       sticky: true
       attrs:
       - key: size
         value: 30
-    - prompt: _(Your Phone Number)
+    - prompt: _(Your Phone Number (will NOT be shown on the map))
       type: tel
       name: private-phone
       sticky: true
