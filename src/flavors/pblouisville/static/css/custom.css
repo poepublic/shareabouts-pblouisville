@@ -95,6 +95,13 @@ h4 {
 
 /* =Form Style
 -------------------------------------------------------------- */
+label {
+  font-size: 1em;
+  text-transform: none;
+  color: #000;
+  margin-right: 0.5em;
+}
+
 form {
 }
 
@@ -109,7 +116,7 @@ fieldset {
 
 #omov {
   height: 8em;
-  padding-left: 30%;
+  padding-left: 35%;
 }
 
 /* =Add Place Button
@@ -175,6 +182,7 @@ input.geocode-address-field {
 h1 {
   font-size: 2em;
   font-family: "Lato", serif;
+  color: #3a52af;
 }
 
 .place-submission-confirmation {
