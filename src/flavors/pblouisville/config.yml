@@ -41,7 +41,7 @@ map:
     # Raster Tile Layers
     # ==================
     - url: https://api.mapbox.com/styles/v1/danaemobley/cjluxt6sj20g92rnsvwmfiyqt/tiles/256/{z}/{x}/{y}@2x?fresh=true&access_token=pk.eyJ1IjoiZGFuYWVtb2JsZXkiLCJhIjoiY2loODJjNDZjMHQ3c3Vta2lmd3k1Mm1iZiJ9.Me79N9SPoQPdl6-U0kIZxg#14.0/42.362922/-71.056250/0
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>. Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">.'
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>.'
 
     # Mapbox GL Layers
     # ================
