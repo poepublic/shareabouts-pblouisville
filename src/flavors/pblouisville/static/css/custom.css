@@ -64,7 +64,7 @@ h1#site-title a {
   vertical-align:text-top;
 }
 
-h2 {
+h1,h2 {
   color:#3a52af;
 }
 
@@ -105,6 +105,11 @@ fieldset {
 
 .place-form .btn {
   margin-left: 5%;
+}
+
+#omov {
+  height: 8em;
+  padding-left: 30%;
 }
 
 /* =Add Place Button
