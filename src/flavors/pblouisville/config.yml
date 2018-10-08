@@ -231,6 +231,7 @@ survey:
       name: comment
       attrs:
         - key: required
+      help_text: _(Comments that you leave here will only be attached to this idea. You may leave a comments on any other idea by clicking the idea's dot on the map.)
     - prompt: _(Your Name)
       type: text
       name: submitter_name
