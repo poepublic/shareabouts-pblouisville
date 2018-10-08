@@ -1,0 +1,331 @@
+/*
+ * This CSS file follows the default Shareabouts style.css.
+ * All rules herein will override the default Shareabouts styles.
+ * NOTE: "With great power comes great responsibility."
+ */
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1300px) {
+}
+
+/* Body */
+body {
+  background-color: #00172b;
+}
+
+.place-location_type-field {
+  display: none;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+#pages-nav-container {
+    height: 100%;
+    float: right;
+}
+#site-header {
+  color: #fff;
+  background-color: #3a52af;
+  position: relative;
+  z-index: 40;
+  padding: 0.5em;
+  box-shadow: 0 0.325em 0 rgba(0,0,0,0.1);
+}
+
+#site-title a:link, #site-title a:visited {
+  color: #fff;
+}
+.has-pages #site-title {
+  padding-left: 2.25em;
+}
+
+/* =typography
+-------------------------------------------------------------- */
+h1#site-title a {
+  color: #fff;
+  font-size: 1.1em;
+  font-family: "museo-slab", serif;
+  font-style: normal;
+  font-weight: 500;
+  padding: 0,0,0.5em,0;
+  vertical-align:text-top;
+}
+
+h1,
+h2 {
+  color:#3a52af;
+}
+
+h4 {
+  font-size: 1.5em;
+  color:#3a52af;
+}
+
+
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
+  background-color: #7030a0;
+  color: #fff;
+  border:none;
+  box-shadow: none;
+  /*border: 1px solid rgba(0,0,0,1);
+  border-radius: 1px;*/
+}
+.btn-secondary,
+.btn-secondary:visited,
+.btn-secondary:link {
+  background-color: #fff;
+  color: #003e7e;
+  box-shadow: none;
+}
+
+/* =Form Style
+-------------------------------------------------------------- */
+label {
+  font-size: 1em;
+  text-transform: none;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+form {
+}
+
+fieldset {
+  margin: 5%;
+  padding: 0 0 2em;
+}
+
+.place-form .btn {
+  margin-left: 5%;
+}
+
+#omov {
+  height: 8em;
+  padding-left: 35%;
+}
+
+/* =Add Place Button
+-------------------------------------------------------------- */
+#add-place-btn-container {
+  background-color: #126938;
+  color: #fff;
+  box-shadow: 0;
+}
+
+#site-title img{
+  height:1.25em;
+  line-height:1em;
+  vertical-align:text-top;
+}
+/* =Close Button
+-------------------------------------------------------------- */
+/* a.close-btn {
+  background: #fff;
+  color: #ff5e99;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1.125em;
+  float: left;
+  display: block;
+  position: absolute;
+  top: -1.325em;
+  left: 0.5em;
+  padding: 0.325em 0.625em;
+  z-index: 2;
+  box-shadow: none;
+  border-radius: 0.325em 0.325em 0 0;
+} */
+
+/* =Ticker
+-------------------------------------------------------------- */
+#ticker {
+  background-color: #fff;
+}
+
+/* = Geocoding
+-------------------------------------------------------------- */
+div#geocode-address-bar {
+  background-color: #3e52a4;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+input.geocode-address-field {
+  background-color: #fff;
+}
+/* =Footer
+-------------------------------------------------------------- */
+#colophon {
+  background-color: #3e52a4;
+  color: #ddd;
+  padding: 0.25em;
+  box-shadow: inset 0 0.325em rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* = Typography
+-------------------------------------------------------------- */
+h1 {
+  font-size: 2em;
+  font-family: "Lato", serif;
+  color: #3a52af;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "museo-slab", serif;
+}
+
+
+
+.place-submission-confirmation {
+  font-weight: normal;
+}
+
+.recent-points a {
+  color: #58585a;
+  text-decoration: none;
+  float: left;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #666;
+  padding: 0.5em 0.5em 0.5em 3em;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+.radio-label-text,
+.checkbox-label-text,
+select,
+textarea {
+  outline: 0;
+  border: 2px solid #3D53AE;
+  border-radius: 4px;
+  padding: 0.5em;
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, select, input, textarea {
+  color: #555;
+  font-family: "Lato", Arial, Helvetica, serif;
+}
+
+.drag-marker-instructions,
+.drag-marker-warning {
+  background-color: #e6e7e8;
+}
+
+.help-text {
+  font-size: 0.8em;
+}
+
+.location-receiver {
+  padding-top: 0.5rem;
+}
+
+.place-private-communityrep-help-text {
+  padding-top: 0.5em;
+}
+
+.user-support label {
+  color: white;
+}
+
+.geocode-address-field {
+  padding-left: 2.5em;
+  color: #6f6f6f;
+}
+
+/* Geogoding / Address Search */
+
+.geocoding-enabled .leaflet-center {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 55px;
+  padding-right: 58px;
+  transition: top 0.25s;
+}
+
+.geocoding-enabled .leaflet-control-geocoder {
+  position: relative;
+  width: 100%;
+  transition: border-color 1s, border-width 1s;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-icon {
+  position: absolute;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-form {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-form input {
+  width: 100%;
+}
+
+.geocoding-enabled .leaflet-control-geocoder-alternatives {
+  width: 100%;
+}
+
+.place-form-visible .leaflet-touch .leaflet-control-geocoder {
+  border-color: #3D53AE;
+  /* border-width: 4px; */
+}
+
+.place-form-visible .leaflet-top.leaflet-center {
+  top: 15%;
+}
+
+@media only screen and (min-width: 60em) {
+  .place-form-visible .leaflet-top.leaflet-center {
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 60em){
+  .geocoding-enabled #content {
+    top: 5em;
+  }
+
+  .geocoding-enabled #map-container {
+    top: 5em;
+  }
+}
+
+.geocoding-enabled #geocode-address-bar {
+  display: none;
+}

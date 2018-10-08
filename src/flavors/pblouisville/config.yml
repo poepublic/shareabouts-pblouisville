@@ -1,0 +1,286 @@
+# Settings for the app
+app:
+  # HTML Title
+  title: LouisvilleKy
+  # Header name
+  name: Louisville PB
+  # Meta description that will show up in Google search results
+  meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
+  # Meta author that will show up in Google search results
+  meta_author: PoePublic
+
+
+  # When the map loads, existing places will be loaded in chunks. By default,
+  # the size of the chunks will be a reasonable default dictated by the API
+  # server. If you would like to override the chunk size, use this setting:
+  # places_page_size: 100
+
+  # Optional. List view is supported by default. Set to false to disable.
+  list_enabled: false
+
+# Settings for map and layer configs
+map:
+  geolocation_enabled: true
+  geolocation_onload: false
+
+  geocoding_enabled: true
+  geocoding_engine: 'Mapbox'
+  geocode_field_label: _(Enter an address...)
+  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+
+  options:
+    center:
+      lat: 38.253898
+      lng: -85.747083
+    zoom: 12
+    minZoom: 10
+    maxZoom: 18
+    maxBounds: [[38.41916639395372, -85.51345825195314],  [38.07296037683433, -86.00784301757814]]
+    scrollWheelZoom: false
+  layers:
+    # Raster Tile Layers
+    # ==================
+    - url: https://api.mapbox.com/styles/v1/danaemobley/cjluxt6sj20g92rnsvwmfiyqt/tiles/256/{z}/{x}/{y}@2x?fresh=true&access_token=pk.eyJ1IjoiZGFuYWVtb2JsZXkiLCJhIjoiY2loODJjNDZjMHQ3c3Vta2lmd3k1Mm1iZiJ9.Me79N9SPoQPdl6-U0kIZxg#14.0/42.362922/-71.056250/0
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>.'
+
+    # Mapbox GL Layers
+    # ================
+    # - type: mapbox
+    #   style: mapbox://styles/mapbox/streets-v8
+    #   accessToken: pk.eyJ1Ijoib3BlbnBsYW5zIiwiYSI6ImZRQzRPYnMifQ.f75KI3Q9rFXRY2Zciz6DKw
+
+    # GeoJSON Layers
+    # ==============
+    - url: /static/data/philadelphia.geojson
+      type: json
+      rules:
+        - condition: 'true'
+          style:
+            color: "#444"
+            opacity: 0.6
+            fillOpacity: 0.1
+            weight: 1
+
+# The keys show up in the dropdown list when you are adding a new place
+# The values map the place type to map icons (defined below).
+place_types:
+  idea:
+    label: _(Idea)
+    rules:
+      - condition: '{{map.zoom}} < 13 && {{layer.focused}} === false'
+        # Display landmarks as circles (vectors) when zoomed out
+
+        style:
+          color: '#0d85e9'
+          radius: 3
+          weight: 1
+          opacity: 0.9
+          fillOpacity: 1
+
+      - condition: '{{map.zoom}} >= 13 && {{layer.focused}} === false'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/dot-0d85e9.png
+          iconSize: [17, 18]
+          iconAnchor: [9, 9]
+
+      - condition: '{{layer.focused}} === true'
+        # Display landmarks as icons when zoomed in
+
+        icon:
+          iconUrl: /static/css/images/markers/marker-0d85e9.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [25, 41]
+          shadowSize: [41, 41]
+          iconAnchor: [12, 41]
+
+
+activity:
+  # Optional. Activity is supported by default. Set to false to disable.
+  enabled: true
+  # How often to refresh the activity list, in milliseconds.
+  interval: 30000
+
+place:
+  adding_supported:
+    from: '2017-03-07 00:00 -0500'   # Daylight savings begins mid-March
+    until: '2021-04-07 00:00 -0400'  # and ends mid-October.
+  add_button_label: _(Submit Your Idea)
+  # Labels for the buttons that toggle the map and list views
+  show_list_button_label: _(List All Places)
+  show_map_button_label: _(Show the Map)
+  action_text: _(added)
+  title: _(How should your tax dollars be spent in your neighborhood?)
+  action_text: _(created)
+  anonymous_name: _(Someone)
+  submit_button_label: _(Submit)
+
+  location_item_name: location
+
+  items:
+    - prompt: _(Location type is always "idea")
+      type: hidden
+      name: location_type
+      optional: false
+      attrs:
+        - key: value
+          value: idea
+    - prompt: _(What is your idea for what should be created or repaired in our district/neighborhood?)
+      type: textarea
+      name: title
+      optional: false
+      attrs:
+        - key: placeholder
+          value: _(Describe your idea...)
+        - key: maxlength
+          value: 1000
+        - key: required
+          value: true
+    - prompt: _(Where should it be located?)
+      type: location
+      name: approxaddress
+      placeholder: _(Drag the map or enter an address in the search bar to set your idea location.)
+    - prompt: _(Your Name (required for contact purposes))
+      type: text
+      name: submitter_name
+      sticky: true
+      optional: false
+      attrs:
+        - key: size
+          value: 30
+        - key: required
+          value: true
+    - prompt: _(Do you wish to hide your name?)
+      type: select
+      name: private-anonymous_name
+      sticky: true
+      help_text: _(If you do not hide your name, you will be attributed as the author of your idea. Your name will appear next to your idea on this website.)
+      options:
+        - label: _(No)
+          value: no
+        - label: _(Yes)
+          value: yes
+    - prompt: _(What is your preferred contact method?)
+      type: select
+      name: private-preferred_contact
+      sticky: true
+      options:
+        - label: _(Email)
+          value: email
+        - label: _(Phone)
+          value: phone
+    - prompt: _(Your Email (will NOT be shown on the map))
+      type: email
+      name: private-email
+      sticky: true
+      attrs:
+      - key: size
+        value: 30
+    - prompt: _(Your Phone Number (will NOT be shown on the map))
+      type: tel
+      name: private-phone
+      sticky: true
+      attrs:
+        - key: size
+          value: 10
+    - prompt: _(Your Neighborhood/District (required, will NOT be shown on the map))
+      type: text
+      name: private-neighborhood
+      sticky: true
+      attrs:
+        - key: size
+          value: 10
+        - key: required
+          value: true
+    - prompt: _(Would you like to volunteer?)
+      type: select
+      name: private-communityrep
+      sticky: true
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(Yes)
+          value: yes
+        - label: _(No)
+          value: no
+      help_text: _(Thank you for volunteering to serve your district as a volunteer. Volunteers are essential to the Participatory Budgeting process. It is their job to take the ideas developed by community members at the neighborhood assemblies and elsewhere, and turn them into concrete proposals to put on the final ballot.)
+
+
+survey:
+  submission_type: comments
+  adding_supported: true
+
+  # Response config
+  show_responses: true
+  # Set to true if the user should only submit a survey once
+  single_submission: false
+  response_name: _(comment)
+  response_plural_name: _(comments)
+  action_text: _(commented on)
+  anonymous_name: _(Someone)
+
+  # Survey form config
+  title: _(Leave a Comment for this idea)
+  form_link_text: _(Leave a Comment)
+  submit_btn_text: _(Comment)
+  items:
+    - prompt: _(Comment on this idea)
+      label: _(Comment)
+      type: textarea
+      name: comment
+      attrs:
+        - key: required
+    - prompt: _(Your Name)
+      type: text
+      name: submitter_name
+      sticky: true
+
+support:
+  submission_type: support
+  adding_supported: true
+  submit_btn_text: _(Support)
+  response_name: _(support)
+  response_plural_name: _(supports)
+  action_text: supported
+  anonymous_name: _(Someone)
+
+pages:
+
+  - title: _(About Idea Collection)
+    slug: about
+    start_page: true
+    name: overview
+
+  - title: _(Get Involved)
+    external: true
+    url: http://louisvilleky.gov/government/center-health-equity/get-involved
+
+  - title: _(Upcoming Events)
+    external: true
+    url: http://louisvilleky.gov/government/center-health-equity/participatory-budgeting-event-calendar
+
+  - title: _(Return to Our Money, Our Voice)
+    external: true
+    url: http://www.ourmoneyourvoice.org
+
+ # - title: Filter Places
+    #slug: filter-type
+    #pages:
+     # - title: All
+      #  external: true
+       # url: /filter/all
+      #- title: _(Landmark)
+       # url: /filter/landmark
+        #external: true
+      #- title: _(Park)
+       # url: /filter/park
+        #external: true
+      #- title: _(School)
+       # url: /filter/school
+        #external: true
+        #*/
+
+notifications:
+  on_new_place: true
+  submitter_email_field: private-submitter_email
