@@ -168,6 +168,10 @@ h1 {
   font-family: "Lato", serif;
 }
 
+.place-submission-confirmation {
+  font-weight: normal;
+}
+
 .recent-points a {
   color: #58585a;
   text-decoration: none;
