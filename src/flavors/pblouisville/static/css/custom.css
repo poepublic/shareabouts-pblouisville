@@ -83,7 +83,6 @@ h1 {
   color: #fff;
   border:none;
   box-shadow: none;
-  margin:5%;
   /*border: 1px solid rgba(0,0,0,1);
   border-radius: 1px;*/
 }
@@ -99,9 +98,14 @@ h1 {
 -------------------------------------------------------------- */
 form {
 }
+
 fieldset {
   margin: 5%;
   padding: 0 0 2em;
+}
+
+.place-form .btn {
+  margin-left: 5%;
 }
 
 /* =Add Place Button
@@ -169,8 +173,14 @@ input.geocode-address-field {
   text-align: left;
 }
 
+<<<<<<< HEAD
 
 
+=======
+.place-submission-confirmation {
+  font-weight: normal;
+}
+>>>>>>> 71671b4950c4c171a25fbd2633e2da0eed26f271
 
 .recent-points a {
   color: #58585a;
