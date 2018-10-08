@@ -65,10 +65,18 @@
  -->
 {% block includes %}
 <script>
+  // Add special events for when:
+  //
+  // (1) The anonymity selection changes. In this instance, we should switch the
+  //     `submitter_name` field to private if anonymity is true, otherwise not
+  //     private.
+  // (2) The preferred contact selection changes. If the value is `email`, then
+  //     make the email input required. If the value is `phone` then make the
+  //     phone input required.
   Shareabouts.PlaceFormView.prototype.events = $.extend(
     Shareabouts.PlaceFormView.prototype.events,
     { 'change [name="private-anonymous_name"]': 'onAnonymityChange',
-      'change [name="private-preferred"]': 'onPreferredContactChange' }
+      'change [name="private-preferred_contact"]': 'onPreferredContactChange' }
   );
 
   Shareabouts.PlaceFormView.prototype.syncAnaonymity = function(el) {
@@ -103,6 +111,9 @@
     this.syncPreferredContact(el);
   }
 
+  // Override the `PlaceFormView.render` method to call `syncAnonymity` and
+  // `syncPreferredContact` when it's first rendered. We listen for these on
+  // change, but need to initialize them as soon as they exist as well.
   var PlaceFormView_render = Shareabouts.PlaceFormView.prototype.render;
   Shareabouts.PlaceFormView.prototype.render = function() {
     PlaceFormView_render.call(this);
