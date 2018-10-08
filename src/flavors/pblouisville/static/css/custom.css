@@ -186,6 +186,12 @@ h1 {
   color: #3a52af;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-family: "museo-slab", serif;
+}
+
+
+
 .place-submission-confirmation {
   font-weight: normal;
 }
