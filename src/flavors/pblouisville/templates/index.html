@@ -64,4 +64,19 @@
   Analytics, custom JS, and such go here
  -->
 {% block includes %}
+<script>
+  Shareabouts.PlaceFormView.prototype.events = $.extend(
+    Shareabouts.PlaceFormView.prototype.events,
+    { 'change [name="private-anonymous_name"]': 'onAnonymityChange' }
+  );
+
+  Shareabouts.PlaceFormView.prototype.onAnonymityChange = function(evt) {
+    var el = evt.currentTarget;
+    if (el.value == 'false') {
+      this.$('[name="private-submitter_name"]').attr('name', 'submitter_name');
+    } else {
+      this.$('[name="submitter_name"]').attr('name', 'private-submitter_name');
+    }
+  };
+</script>
 {% endblock %}
