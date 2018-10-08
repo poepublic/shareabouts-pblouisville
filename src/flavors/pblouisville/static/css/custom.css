@@ -52,7 +52,7 @@ body {
   padding-left: 2.25em;
 }
 
-/* =typography
+/* =Typography
 -------------------------------------------------------------- */
 h1#site-title a {
   color: #fff;
@@ -67,8 +67,13 @@ h1#site-title a {
 h4 {
   font-size: 1.5em;
   color:#3a52af;
+  margin-left: 5%;
 }
 
+h1 {
+  font-size: 2em;
+  font-family: "Lato", serif;
+}
 
 /* Buttons */
 .btn,
@@ -157,12 +162,15 @@ input.geocode-address-field {
   text-align: center;
 }
 
-/* = Typography
+/* = 
 -------------------------------------------------------------- */
-h1 {
-  font-size: 2em;
-  font-family: "Lato", serif;
+/* Location receiver */
+.location-receiver {
+  text-align: left;
 }
+
+
+
 
 .recent-points a {
   color: #58585a;
