@@ -120,5 +120,16 @@
     this.syncPreferredContact();
     return this;
   }
+
+  // Override the `PlaceFormView.getAttrs` method to use `null` as the submitter
+  // if anonymous posting was requested.
+  var PlaceFormView_getAttrs = Shareabouts.PlaceFormView.prototype.getAttrs;
+  Shareabouts.PlaceFormView.prototype.getAttrs = function() {
+    var attrs = PlaceFormView_getAttrs.call(this);
+    if (attrs['private-anonymous_name'] === 'true') {
+      attrs.submitter = null;
+    }
+    return attrs;
+  }
 </script>
 {% endblock %}
